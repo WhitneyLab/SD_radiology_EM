@@ -1,0 +1,32 @@
+Prerequisite packages:
+pupil-apriltags
+shutil 
+platform
+opencv
+logging
+SciPy: numpy, matplotlib, pandas
+statsFuncs: available on GitHub
+
+functions:    
+correct_lag():returns the average delay between when the experiment was sent and when the stimulus appears on the screen
+    trial_range = range of trials where annotations were added. ex: first 10 trials [1, 10]
+    folder_path = path to pupil player recording 
+
+SDlabel_trials(behavioral_df): marks each column of the behavioral df if there is serial dependence
+    behavioral_df: path to the csv: TCB_VM_output_-1nBack.csv
+
+nearest_ts(): helper function that finds the nearest frame to a timestamp
+
+frame_range_finder(folder_path, trial, block, avg): finds the range of frames where the trial occurs
+    avg: average lag delay
+
+subset_frames(EM_path, frame_range, block, trial): optional function that copies a trials frames into a new folder
+    EM_path: path to folder with recording data
+    frame_range: range of frames for a specific trial
+    trial/block number
+
+
+to do:
+- resolve fixation being off the screen
+- make saccade data frame similar to the fixation data frame
+- define regions of each part of the screen
